@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  margin-left: 1000px;
+  margin-top: 500px;
+  background-color: #204078;
+}
+#login {
+  padding: 5px;
+  width: 80px;
+}
+#email,
+#password {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+#email {
+  margin-top: 10px;
+}
+.window {
+  background-color: #ede8dd;
+  border: 2px solid #005dfc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 500px;
+}
+
+.title-bar {
+  font-weight: bold;
+ background-image: linear-gradient(to bottom right, #005dfc, #5c8ee6);
+  color: #ffffff;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-bar-control button {
+  color: white;
+  background-image: linear-gradient(to top left, red, #ffbab8);
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+margin-right:5px;
+}
+
+.window-body {
+  padding: 10px;
+}
+
+</style>
+<body>
+  <div class="window" style="width: 300px">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="https://web.archive.org/web/20091027015643/http://us.geocities.com/rohelakhan/book.gif" width="25px" class="icon">Log On to Windows </div>
+    <div class="title-bar-control">
+      <button id="btn-danger"> X </button>
+    </div>
+  </div>
+  <div class="window-body">
+        <form id="login-form">
+<table>
+<tr>
+  <td class="inside"> Email: </td>
+  <td> <input type="email" id="email" placeholder="Email" size="15"> <td>
+
+<tr>
+<td class="inside"> Password:  </td> 
+<td> <input type="password" id="password" placeholder="Password" size="15">
+</td>
+<tr>
+<td>
+     <a href="file:///C:/Users/User/Downloads/main.html">
+      <button type="submit" id="login">Log in</button>
+    </a>
+    </td>
+        </form>
+  </td>
+</tr>
+</table>
+  </div>
+</div>
+</body>
+</html>
