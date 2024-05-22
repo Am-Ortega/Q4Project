@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+ overflow-x: hidden;
+  background-image: url(https://images2.alphacoders.com/941/941898.jpg);
+ background-size: 2000px;
+ background-repeat:no-repeat;
+}
+
+ .navbar {
+  background-image: linear-gradient(to bottom right, #005dfc, #5c8ee6);
+  border: 2px solid #005dfc;
+  border-radius: 5px;
+  height: 60px; 
+ }
+
+ .logo {
+  width: 50px;
+ }
+ .nav-link {
+  color:#fff;
+  font-weight: bold;
+ }
+ .btn-success {
+   font-weight: bold;
+   color: #ffffff;
+  background-image: linear-gradient(to top left, red, #fc9292);
+  border: 1px solid white;
+  border-radius: 5px;
+ }
+
+.window {
+  background-color: #ede8dd;
+  border: 2px solid #005dfc;
+   margin-left: 750px;
+  margin-top: 200px;
+  border-radius: 5px;
+  overflow:hidden;
+  width: 500px;
+}
+
+.title-bar {
+  font-weight: bold;
+  background-image: linear-gradient(to bottom right, #005dfc, #5c8ee6);
+  color: #ffffff;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-bar-control button {
+  font-weight: bold;
+  white-space: normal;
+  color: #ffffff;
+  background-image: linear-gradient(to top left, red, #ffbab8);
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+#button1 {
+  font-weight: bold;
+  background-image: linear-gradient(to top left, #0050ee, #4880f0);
+  line-height: 9px;
+}
+#button2 {
+  background-image: linear-gradient(to top left, #0050ee, #4880f0);
+  padding-right: 13px;
+  line-height: 9px;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.window-body {
+  margin-left: 40px; 
+  padding-top: 20px;
+  scroll-margin-left: 5px;
+  height:250px; 
+  width: 250px;
+  overflow:scroll;
+  overflow-y: scroll;
+overflow-x: hidden;
+}
+
+
+.pfp {
+  margin-left:50px;
+  margin-bottom: 20px;
+  width: 100px;
+}
+
+.comment-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#comments-list {
+    margin-bottom: 20px;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment h3 {
+    color: #1e4689;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.comment p {
+    color: #000;
+    margin-bottom: 0;
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+
+</style>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="https://pix.crd.co/assets/images/gallery21/decc7954.gif?v=f68256ea" alt="goofy logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">First Quarter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Second Quarter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Third Quarter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Chatbox</a>
+        </li>
+
+
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search for keywords. . .">
+        <button class="btn btn-success" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="window" style="width: 300px">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="https://pixels.crd.co/assets/images/gallery70/bd1cd693.gif?v=2942f085" width="20" class="icon"> My Chatbox! </div>
+    <div class="title-bar-control">
+      <button aria-label="Minimize" id="button1">-</button>
+      <button aria-label="Maximize" id="button2" class="button">🗖</button>
+      <button aria-label="Close"> X </button>
+    </div>
+  </div>
+  <div class="window-body">
+  <div class="comment-container">
+        <h2>Comments</h2>
+        <div id="comments-list">
+        <form id="comment-form">
+            <input type="text" id="name" placeholder="Your Name">
+            <textarea id="comment-input" placeholder="Add a comment..."></textarea>
+            <br><button type="submit">Post</button>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
+<script src="script.js">
+document.addEventListener("DOMContentLoaded", function() {
+    const commentForm = document.getElementById('comment-form');
+    const nameInput = document.getElementById('name-input');
+    const commentInput = document.getElementById('comment-input');
+    const commentsList = document.getElementById('comments-list');
+
+    commentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nameText = nameInput.value.trim();
+        const commentText = commentInput.value.trim();
+        if (nameText !== '' && commentText !== '') {
+            addComment(nameText, commentText);
+            nameInput.value = '';
+            commentInput.value = '';
+        }
+    });
+
+    function addComment(name, commentText) {
+        const commentElement = document.createElement('div');
+        commentElement.classList.add('comment');
+        const commentHeader = document.createElement('h3');
+        commentHeader.textContent = name;
+        const commentContent = document.createElement('p');
+        commentContent.textContent = commentText;
+        commentElement.appendChild(commentHeader);
+        commentElement.appendChild(commentContent);
+        commentsList.appendChild(commentElement);
+    }
+});
+</script>
+</body>
+</html>
